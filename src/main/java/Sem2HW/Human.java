@@ -1,9 +1,7 @@
 package Sem2HW;
 
-public class Human extends AbstractEntity{
-    private final int runDistanceLimit = 500;
-    private final double jumpHeigthLimit = 1.2;
-    public Human(String name, int age) {
-        super(name, age);
+public class Human extends AbstractEntity {
+    public Human(String name, int age, int runDistanceLimit, double jumpHeigthLimit) {
+        super(name, age, runDistanceLimit, jumpHeigthLimit);
     }
 }

@@ -1,10 +1,10 @@
 package Sem2HW;
 
-public class RunningTrack {
+public class RunningTrack implements Obstacled{
     private int length;
 
     public RunningTrack(int length) {
-        this.length = length;
+        this.length = length * 100;
     }
 
     public int getLength() {

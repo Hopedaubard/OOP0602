@@ -6,14 +6,6 @@ public abstract class AbstractEntity {
     private int runDistanceLimit;
     private double jumpHeigthLimit;
 
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
     public int getRunDistanceLimit() {
         return runDistanceLimit;
     }
@@ -22,23 +14,34 @@ public abstract class AbstractEntity {
         return jumpHeigthLimit;
     }
 
-    public AbstractEntity(String name, int age) {
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public AbstractEntity(String name, int age,int runDistanceLimit, double jumpHeigthLimit) {
         this.name = name;
         this.age = age;
+        this.runDistanceLimit = runDistanceLimit;
+        this.jumpHeigthLimit = jumpHeigthLimit;
     }
-    public void toRun(RunningTrack track){
-        if (track.getLength() > runDistanceLimit){
+
+    public void toRun(RunningTrack track) {
+        if (track.getLength() > runDistanceLimit) {
             System.out.println(name + " не может пробежать!");
         } else {
             System.out.println(name + " пробежал " + track.getLength() + " метров");
         }
     }
-    public void toJump(JumpWall wall){
-        if (wall.getWallHeigth() > jumpHeigthLimit){
+
+    public void toJump(JumpWall wall) {
+        if (wall.getWallHeigth() > jumpHeigthLimit) {
             System.out.println(name + " не может прыгнуть!");
         } else {
-            System.out.println(name + " прыгнул " + wall.getWallHeigth() + " метров");
+            System.out.println(name + " прыгнул " + String.format("%.2f", wall.getWallHeigth()) + " метров");
         }
-    };
-
+    }
 }

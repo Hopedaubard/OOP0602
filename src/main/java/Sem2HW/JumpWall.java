@@ -1,6 +1,6 @@
 package Sem2HW;
 
-public class JumpWall {
+public class JumpWall implements Obstacled{
     private double wallHeigth;
 
     public JumpWall(double wallHeigth) {
