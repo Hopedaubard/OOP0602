@@ -11,6 +11,7 @@ public class Answer {
         this.tryCount = tryCount;
     }
 
+
     @Override
     public String toString() {
         return cowCounter + " коровы, " + bullCounter + " быка. " + "Осталось попыток " + tryCount;

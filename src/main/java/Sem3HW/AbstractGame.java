@@ -9,12 +9,14 @@ public abstract class AbstractGame implements Game {
     private String word;
     Integer tryCount;
     GameStatus gameStatus = GameStatus.INIT;
+    Integer restarterTryCounter;
 
     @Override
     public void start(Integer sizeWord, Integer tryCount) {
         this.word = generateWord(sizeWord);
         this.tryCount = tryCount;
         this.gameStatus = GameStatus.START;
+        this.restarterTryCounter = tryCount;
     }
 
     private String generateWord(Integer sizeWord) {
@@ -50,6 +52,9 @@ public abstract class AbstractGame implements Game {
         }
         if (bullCounter == word.length()){
             gameStatus = GameStatus.WIN;
+        }
+        if (tryCount < 0){
+            tryCount = restarterTryCounter - 1;
         }
         return new Answer(cowCounter, bullCounter, tryCount);
     }
