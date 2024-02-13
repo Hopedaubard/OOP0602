@@ -10,6 +10,12 @@ public abstract class AbstractGame implements Game {
     Integer tryCount;
     GameStatus gameStatus = GameStatus.INIT;
     Integer restarterTryCounter;
+    Logger logger = new Logger();
+    private String result;
+
+    public String getResult() {
+        return result;
+    }
 
     @Override
     public void start(Integer sizeWord, Integer tryCount) {
@@ -28,6 +34,7 @@ public abstract class AbstractGame implements Game {
             result += alphabet.get(randomIndex);
             alphabet.remove(randomIndex);
         }
+        this.result = result;
         return result;
     }
 

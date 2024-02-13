@@ -16,4 +16,8 @@ public class Answer {
     public String toString() {
         return cowCounter + " коровы, " + bullCounter + " быка. " + "Осталось попыток " + tryCount;
     }
+
+    public Integer getTryCount() {
+        return tryCount;
+    }
 }
