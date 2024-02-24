@@ -5,7 +5,7 @@ import Sem5Task1.model.User;
 import java.util.List;
 
 public class StudyGroupView {
-    public void printStudyGroup(List<User> studyGroup){
+    public void printStudyGroup(List<User> studyGroup) {
         System.out.printf("Учебная группа: \n" + studyGroup);
     }
 }

@@ -27,8 +27,9 @@ public class Controller {
         createStudent(user3);
         List<Student> studentList = dataStudent.read();
         studentView.printStudent(studentList);
-        DataStudyGroup dataStudyGroup = new DataStudyGroup(createTeacher(user2), studentList);
-        List <User> userList = dataStudyGroup.toReadStudyGroup();
+        DataStudyGroup dataStudyGroup = new DataStudyGroup();
+        dataStudyGroup.createGroup(createTeacher(user2), studentList);
+        List<User> userList = dataStudyGroup.toReadStudyGroup();
         studyGroupView.printStudyGroup(userList);
     }
 
@@ -44,5 +45,6 @@ public class Controller {
         dataStudent = new DataStudent();
         dataTeacher = new DataTeacher();
         studentView = new StudentView();
+        studyGroupView = new StudyGroupView();
     }
 }

@@ -7,18 +7,18 @@ import Sem5Task1.model.User;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataStudyGroup implements StudyGroupService{
+public class DataStudyGroup implements StudyGroupService {
     Teacher teacher;
-    List <Student> studentList = new ArrayList<>();
-    List <User> studyGroup = new ArrayList<>();
+    List<Student> studentList = new ArrayList<>();
+    List<User> studyGroup = new ArrayList<>();
 
-    public DataStudyGroup(Teacher teacher, List<Student> studentList) {
-        this.teacher = teacher;
-        this.studentList = studentList;
+    public DataStudyGroup() {
     }
 
     @Override
     public void createGroup(Teacher teacher, List<Student> studentList) {
+        this.teacher = teacher;
+        this.studentList = studentList;
         List<User> studyGroup = new ArrayList<>();
         studyGroup.add(teacher);
         studyGroup.addAll(studentList);
@@ -27,6 +27,6 @@ public class DataStudyGroup implements StudyGroupService{
 
     @Override
     public List<User> toReadStudyGroup() {
-        return studyGroup;
+        return this.studyGroup;
     }
 }
